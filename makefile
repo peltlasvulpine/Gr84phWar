@@ -13,3 +13,13 @@ CXXFLAGS = -Wall -Wextra -Oz
 # ----------------------------
 
 include $(shell cedev-config --makefile)
+
+gfx:
+	cd src/gfx && \
+	convimg
+
+gfxclean:
+	cd src/gfx && \
+	rm -f *.c *.h *.lst
+
+all: gfx
