@@ -9,8 +9,6 @@
 #define INFILL 0xFF
 #define TEXTFG 0x00
 
-//4
-
 void MainScreenSelect(int selected){
     gfx_FillScreen(BACKGROUND);
 

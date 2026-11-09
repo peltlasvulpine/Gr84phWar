@@ -1,7 +1,10 @@
 palettes:
   - name: gfxpalette
     fixed-entries:
-      - color: {index: 7, r: 255, g: 0, b: 255}
+      - color: {index: 0x8F, r: 140, g: 243, b: 123}  # menu background
+      - color: {index: 0x4D, r: 74, g: 170, b: 107}      # selected outline
+      - color: {index: 0x2B, r: 41, g: 101, b: 90}        # outline
+      - color: {index: 0xFF, r: 255, g: 255, b: 255}  # fill
     images: automatic
 
 converts:

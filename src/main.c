@@ -38,10 +38,10 @@ int main(void){
     // init screen
     gfx_Begin();
     gfx_SetDrawBuffer();
-    gfx_SetPalette(gfxpalette, sizeof_gfxpalette, 0);
     gfx_SetTransparentColor(TRANSPARENTCOL);
+    gfx_SetPalette(gfxpalette, sizeof_gfxpalette, 0);
     int select = 1;
-    while(!exitkey()){
+    while(!(exitkey())){
         // mainscreen
         while(1){
         if(getDpad() != 0){
