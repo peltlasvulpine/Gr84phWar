@@ -56,6 +56,11 @@ GameSettings gameSettingsScreen(GameSettings g){
     while(!start){
         gfx_FillScreen(BACKGROUND);
 
+        gfx_RLETSprite(f1, 1, 220);
+        gfx_RLETSprite(f2, 65, 220);
+        gfx_RLETSprite(f3, 129, 220);
+        gfx_RLETSprite(f4, 193, 220);
+        gfx_RLETSprite(f5, 257, 220);
         gfx_SetTextScale(3, 3);
         gfx_PrintStringXY("Settings", 76, 3);
 
