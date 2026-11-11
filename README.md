@@ -1,6 +1,8 @@
 # Gr84phWar
 
-A port for the game "Graphwar", but for calulators like the TI-84 Plus CE (or similar)!
+A port for the game [*Graphwar*](https://github.com/catabriga/graphwar), but for calulators like the TI-84 Plus CE (or similar)!
+
+> To specify, this is a port / recreation of Graphwar 1, if you wanted a recreationof the newer game, Graphwar 2, tough luck buddy.
 
 ### Status
 
