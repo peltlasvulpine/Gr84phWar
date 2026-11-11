@@ -2,13 +2,11 @@
 #include <keypadc.h>
 #include <stdbool.h>
 
-#define EXITKEY kb_KeyClear // use long key format
-
 bool anyKeyDown(){
     kb_Scan();
 
     bool keyDown = false;
-    for (int i = 0; i < 7; i++){
+    for (int i = 0; i < 8; i++){
         if (kb_Data[i] != 0){
             keyDown = true;
             break;
@@ -18,39 +16,63 @@ bool anyKeyDown(){
     return keyDown;
 }
 
-int getDpad(){
+Dpad getDpad(){
     
-    int key = 0;
+    Dpad pressed = {0};
 
     kb_Scan();
     if (kb_Data[7] != 0){
         if (kb_Data[7] & kb_Up){
-            key = 1;
+            pressed.dpad[0] = true;
         }
         if (kb_Data[7] & kb_Left){
-            key = 2;
+            pressed.dpad[1] = true;
         }
         if (kb_Data[7] & kb_Down){
-            key = 3;
+            pressed.dpad[2] = true;
         }
         if (kb_Data[7] & kb_Right){
-            key = 4;
+            pressed.dpad[3] = true;
         }
     }
 
-    return key;
+    return pressed;
+}
+
+FKeys getFKeys(){
+    
+    FKeys pressed = {0};
+    
+    kb_Scan();
+    if (kb_Data[1] != 0){
+        if (kb_Data[1] & kb_Yequ){
+            pressed.fkey[0] = true;
+        }
+        if (kb_Data[1] & kb_Window){
+            pressed.fkey[1] = true;
+        }
+        if (kb_Data[1] & kb_Zoom){
+            pressed.fkey[2] = true;
+        }
+        if (kb_Data[1] & kb_Trace){
+            pressed.fkey[3] = true;
+        }
+        if (kb_Data[1] & kb_Graph){
+            pressed.fkey[4] = true;
+        }
+    }
+
+    return pressed;
 }
 
 bool exitkey(){
-    bool keydwn = false;
+    bool keyDwn = false;
     kb_Scan();
-    if(kb_IsDown(EXITKEY)){
-        keydwn = true;
-    }
-    return keydwn;
+    if(kb_IsDown(EXITKEY)){keyDwn = true;}
+    return keyDwn;
 }
 
-bool exec(){
+bool execkey(){
     bool execPressed = false;
     kb_Scan();
     if(kb_IsDown(kb_Key2nd) || kb_IsDown(kb_KeyEnter)){execPressed = true;}
